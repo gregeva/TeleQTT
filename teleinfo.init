@@ -7,7 +7,7 @@ set -e
 NAME=teleinfo
 PIDFILE=/var/run/$NAME.pid
 #This is the command to be run, give the full pathname
-DAEMON_OPTS="-d -m -S $NAME /home/username/TeleQTT/TeleQTT.py &> /dev/null"
+DAEMON_OPTS="-d -m -S $NAME /opt/TeleQTT/TeleQTT.py &> /dev/null"
 DAEMON=/usr/bin/screen
  
 export PATH="${PATH:+$PATH:}/usr/sbin:/sbin"
