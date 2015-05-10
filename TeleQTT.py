@@ -3,6 +3,7 @@ import mosquitto
 import os
 import teleinfo
 from serial import SerialException
+from socket import gethostname
 
 broker = "broker"
 port = 1883
@@ -50,7 +51,7 @@ try:
         line = ti.read()
         if line is not None:
             for serEtiquette, serValue in line.items():
-                mqttc.publish("EDF/"+serEtiquette, serValue)
+                mqttc.publish(gethostname()+"/ENERGY/TeleInfo/"+serEtiquette, serValue)
 except (SerialException):
     print "Serial Exception"
 #    pass
