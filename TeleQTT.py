@@ -4,7 +4,7 @@ import os
 import teleinfo
 from serial import SerialException
 
-broker = "localhost"
+broker = "broker"
 port = 1883
 
 def on_connect(mosq, obj, rc):
