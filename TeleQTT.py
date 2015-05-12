@@ -51,7 +51,7 @@ try:
         line = ti.read()
         if line is not None:
             for serEtiquette, serValue in line.items():
-                mqttc.publish(gethostname()+"/ENERGY/TeleInfo/"+serEtiquette, serValue)
+                mqttc.publish("/"+gethostname()+"/TELEQTT-V1/"+serEtiquette, serValue)
 except (SerialException):
     print "Serial Exception"
 #    pass
